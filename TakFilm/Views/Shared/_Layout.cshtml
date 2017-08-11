@@ -37,52 +37,57 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                    </ol>
+                <div class="container">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="https://placehold.it/800x400?text=IMAGE" alt="Image">
-                            <div class="carousel-caption">
-                                <h3>Sell $</h3>
-                                <p>Money Money.</p>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+
+                            <div class="item active">
+
+                                <img src="../Library/Image/ragKhab.jpg" alt="Los Angeles" style="width:100%;">
+                                <div class="carousel-caption">
+                                    <h3>Los Angeles</h3>
+                                    <p>LA is always so much fun!</p>
+                                </div>
                             </div>
+
+                            <div class="item">
+
+                                <img src="../Library/Image/oxidan.jpg" alt="Chicago" style="width:100%;">
+                                <div class="carousel-caption">
+                                    <h3>Chicago</h3>
+                                    <p>Thank you, Chicago!</p>
+                                </div>
+                            </div>
+
+                            <div class="item">
+
+                                <img src="../Library/Image/saat 5.jpg"  alt="New York" style="width:100%;">
+                                <div class="carousel-caption">
+                                    <h3>New York</h3>
+                                    <p>We love the Big Apple!</p>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="item">
-                            <img src="https://placehold.it/800x400?text=Another Image Maybe" alt="Image">
-                            <div class="carousel-caption">
-                                <h3>More Sell $</h3>
-                                <p>Lorem ipsum...</p>
-                            </div>
-                        </div>
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="well">
-                    <p>Some text..</p>
-                </div>
-                <div class="well">
-                    <p>Upcoming Events..</p>
-                </div>
-                <div class="well">
-                    <p>Visit Our Blog</p>
                 </div>
             </div>
         </div>
@@ -171,10 +176,47 @@
                     <h1>Company</h1>
                     <p>We specialize in blablabla</p>
                 </div>
+                <footer class="text-center">
+                    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                    </a><br><br>
+                    <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>
+                </footer>    
                 <footer>
                     <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
                 </footer>
             </div>
+    <script>
+        $(document).ready(function () {
+            // Initialize Tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        })
+    </script>
+
 
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")
