@@ -89,78 +89,95 @@
         <hr>
     </div>
 
-    <div class="container text-center">
-        <h3>What We Do</h3>
+    <div class="section text-center">
+        <h3>THE BAND</h3>
+        <p><em>We love music!</em></p>
+        <p>We have created a fictional band website. Lorem ipsum..</p>
         <br>
         <div class="row">
-            <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
-            </div>
-            <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Project 2</p>
-            </div>
-            <div class="col-sm-3">
-                <div class="well">
-                    <p>Some text..</p>
-                </div>
-                <div class="well">
-                    <p>Some text..</p>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Name</strong></p><br>
+                <a href="#demo" data-toggle="collapse">
+                    <img src="../Library/Image/bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <div id="demo" class="collapse">
+                    <p>Guitarist and Lead Vocalist</p>
+                    <p>Loves long walks on the beach</p>
+                    <p>Member since 1988</p>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="well">
-                    <p>Some text..</p>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Name</strong></p><br>
+                <a href="#demo2" data-toggle="collapse">
+
+                    <img src="../Library/Image/bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <div id="demo2" class="collapse">
+                    <p>Drummer</p>
+                    <p>Loves drummin'</p>
+                    <p>Member since 1988</p>
                 </div>
-                <div class="well">
-                    <p>Some text..</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Name</strong></p><br>
+                <a href="#demo3" data-toggle="collapse">
+                    <img src="../Library/Image/bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <div id="demo3" class="collapse">
+                    <p>Bass player</p>
+                    <p>Loves math</p>
+                    <p>Member since 2005</p>
                 </div>
             </div>
         </div>
-        <hr>
     </div>
+    <div class="bg-1">
+        <div class="container">
+            <h3 class="text-center">TOUR DATES</h3>
+            <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
 
-    <div class="container text-center">
-        <h3>Our Partners</h3>
-        <br>
-        <div class="row">
-            <div class="col-sm-2">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Partner 1</p>
-            </div>
-            <div class="col-sm-2">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Partner 2</p>
-            </div>
-            <div class="col-sm-2">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Partner 3</p>
-            </div>
-            <div class="col-sm-2">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Partner 4</p>
-            </div>
-            <div class="col-sm-2">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Partner 5</p>
-            </div>
-            <div class="col-sm-2">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Partner 6</p>
+                        <img src="../Library/Image/paris.jpg" alt="Paris" width="400" height="300">
+                        <p><strong>Paris</strong></p>
+                        <p>Fri. 27 November 2015</p>
+                        <button class="btn">Buy Tickets</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="../Library/Image/paris.jpg" alt="Paris" width="400" height="300">
+                        <p><strong>New York</strong></p>
+                        <p>Sat. 28 November 2015</p>
+                        <button class="btn">Buy Tickets</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="../Library/Image/paris.jpg" alt="Paris" width="400" height="300">
+                        <p><strong>San Francisco</strong></p>
+                        <p>Sun. 29 November 2015</p>
+                        <button class="btn">Buy Tickets</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div><br>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <div class="jumbotron text-center">
+                    <h1>Company</h1>
+                    <p>We specialize in blablabla</p>
+                </div>
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
 </body>
 </html>
