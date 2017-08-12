@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    direction:rtl;
+    font-family:tohama;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -29,7 +31,7 @@ footer {
 }
 
 .carousel-inner img {
-    width: 100%; /* Set width to 100% */
+    /*width: 100%;*/ /* Set width to 100% */
     min-height: 200px;
 }
 
@@ -41,7 +43,7 @@ footer {
 }
 
 .jumbotron {
-    background-color: #f4511e;
+    background-color: #e84c4c;
     color: #fff;
 }
 
@@ -58,7 +60,8 @@ footer {
 }
 
     .img-circle person:hover {
-        border-color: #f1f1f1;
+        border-radius:3px 4px;
+        border-color: #248a98;
     }
 
 .thumbnail {
@@ -117,3 +120,8 @@ footer {
             color: #777;
             text-decoration: none;
         }
+.nav navbar-nav {
+    direction: rtl;
+    background-color: #2d2d30;
+    opacity: 0.9;
+}

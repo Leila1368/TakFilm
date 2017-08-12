@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - TakFilm</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,210 +16,76 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header navbar-right">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("TakFilm", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("تماس با ما", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("درباره ما", "About", "Home")</li>
+                    <li>@Html.ActionLink("صفحه اصلی", "Index", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="container">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-
-                                <img src="../Library/Image/ragKhab.jpg" alt="Los Angeles" style="width:100%;">
-                                <div class="carousel-caption">
-                                    <h3>Los Angeles</h3>
-                                    <p>LA is always so much fun!</p>
-                                </div>
-                            </div>
-
-                            <div class="item">
-
-                                <img src="../Library/Image/oxidan.jpg" alt="Chicago" style="width:100%;">
-                                <div class="carousel-caption">
-                                    <h3>Chicago</h3>
-                                    <p>Thank you, Chicago!</p>
-                                </div>
-                            </div>
-
-                            <div class="item">
-
-                                <img src="../Library/Image/saat 5.jpg"  alt="New York" style="width:100%;">
-                                <div class="carousel-caption">
-                                    <h3>New York</h3>
-                                    <p>We love the Big Apple!</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <div class="jumbotron text-center">
+                <h1>Company</h1>
+                <p>We specialize in blablabla</p>
             </div>
+            <footer class="text-center">
+                <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a><br><br>
+                <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>
+            </footer>
+            <footer>
+                <p align="center">&copy; 1396-کلیه حقوق متعلق به سایت تک فیلم میباشد. </p>
+            </footer>
         </div>
-        <hr>
-    </div>
+        <script>
+            $(document).ready(function () {
+                // Initialize Tooltip
+                $('[data-toggle="tooltip"]').tooltip();
 
-    <div class="section text-center">
-        <h3>THE BAND</h3>
-        <p><em>We love music!</em></p>
-        <p>We have created a fictional band website. Lorem ipsum..</p>
-        <br>
-        <div class="row">
-            <div class="col-sm-4">
-                <p class="text-center"><strong>Name</strong></p><br>
-                <a href="#demo" data-toggle="collapse">
-                    <img src="../Library/Image/bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
-                </a>
-                <div id="demo" class="collapse">
-                    <p>Guitarist and Lead Vocalist</p>
-                    <p>Loves long walks on the beach</p>
-                    <p>Member since 1988</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <p class="text-center"><strong>Name</strong></p><br>
-                <a href="#demo2" data-toggle="collapse">
+                // Add smooth scrolling to all links in navbar + footer link
+                $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
 
-                    <img src="../Library/Image/bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
-                </a>
-                <div id="demo2" class="collapse">
-                    <p>Drummer</p>
-                    <p>Loves drummin'</p>
-                    <p>Member since 1988</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <p class="text-center"><strong>Name</strong></p><br>
-                <a href="#demo3" data-toggle="collapse">
-                    <img src="../Library/Image/bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
-                </a>
-                <div id="demo3" class="collapse">
-                    <p>Bass player</p>
-                    <p>Loves math</p>
-                    <p>Member since 2005</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-1">
-        <div class="container">
-            <h3 class="text-center">TOUR DATES</h3>
-            <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
-            <div class="row text-center">
-                <div class="col-sm-4">
-                    <div class="thumbnail">
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
 
-                        <img src="../Library/Image/paris.jpg" alt="Paris" width="400" height="300">
-                        <p><strong>Paris</strong></p>
-                        <p>Fri. 27 November 2015</p>
-                        <button class="btn">Buy Tickets</button>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <img src="../Library/Image/paris.jpg" alt="Paris" width="400" height="300">
-                        <p><strong>New York</strong></p>
-                        <p>Sat. 28 November 2015</p>
-                        <button class="btn">Buy Tickets</button>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="thumbnail">
-                        <img src="../Library/Image/paris.jpg" alt="Paris" width="400" height="300">
-                        <p><strong>San Francisco</strong></p>
-                        <p>Sun. 29 November 2015</p>
-                        <button class="btn">Buy Tickets</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-            <div class="container body-content">
-                @RenderBody()
-                <hr />
-                <div class="jumbotron text-center">
-                    <h1>Company</h1>
-                    <p>We specialize in blablabla</p>
-                </div>
-                <footer class="text-center">
-                    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                    </a><br><br>
-                    <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>
-                </footer>    
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-                </footer>
-            </div>
-    <script>
-        $(document).ready(function () {
-            // Initialize Tooltip
-            $('[data-toggle="tooltip"]').tooltip();
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
 
-            // Add smooth scrolling to all links in navbar + footer link
-            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                        // Store hash
+                        var hash = this.hash;
 
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 900, function () {
 
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 900, function () {
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-        })
-    </script>
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+            })
+        </script>
 
 
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/bootstrap")
-            @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>
