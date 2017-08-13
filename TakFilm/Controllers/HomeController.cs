@@ -19,10 +19,26 @@ namespace TakFilm.Controllers
 
             return View();
         }
-
+       
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        [HttpPost]
+        [ActionName("Contact")]
+        public ActionResult ProcessForm(string firstName,
+            string lastName,
+            string password,
+            string address,
+            bool agreement,
+            string gender,
+            int city,
+            int fruits,
+            DateTime currentTime)
+        {
+            ViewBag.Message = "SALAM " + firstName + " - " + lastName;
 
             return View();
         }
