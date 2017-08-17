@@ -17,14 +17,14 @@ namespace TakFilmClass.Helpers
         public static string GetMailName(EmailType type)
         {
             if (type == EmailType.Info)
-                return "LeilaAsp.Net@gmail.com";
+                return "leilamvcasp@gmail.com";
             else
                 return "";
         }
         public static MailAddress GetMailAddress(EmailType type)
         {
             if (type == EmailType.Info)
-                return new MailAddress("LeilaAsp.Net@gmail.com", "تک فیلم");
+                return new MailAddress("leilamvcasp@gmail.com", "تک فیلم");
            
             else
                 return new MailAddress("");
@@ -39,7 +39,7 @@ namespace TakFilmClass.Helpers
                     Port = 587,
                     EnableSsl = true,
                     UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential("LeilaAsp.Net@gmail.com", "Leila13681396")
+                    Credentials = new NetworkCredential("leilamvcasp@gmail.com", "1368!#^*")
                 };
            
             else
