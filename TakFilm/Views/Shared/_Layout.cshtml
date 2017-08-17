@@ -9,86 +9,89 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/script/JavaScript.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header navbar-right">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("TakFilm", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("تماس با ما", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("درباره ما", "About", "Home")</li>
-                    <li>@Html.ActionLink("صفحه اصلی", "Index", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header navbar-right">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("TakFilm", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("تماس با ما", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("درباره ما", "About", "Home")</li>
+                        <li>@Html.ActionLink("صفحه اصلی", "Index", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <div class="jumbotron text-center">
-            <h1></h1>
-            <p>
-                این وبسایت موافق با قوانین جمهوری اسلامی ایران میباشد.
-            </p>
-            <p>مطالب درصورت درخواست کارگروه‌مصادیق‌جرایم‌اینترنتی حذف خواهند شد</p>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <div class="jumbotron text-center">
+                <h1></h1>
+                <p>
+                    این وبسایت موافق با قوانین جمهوری اسلامی ایران میباشد.
+                </p>
+                <p>مطالب درصورت درخواست کارگروه‌مصادیق‌جرایم‌اینترنتی حذف خواهند شد</p>
+            </div>
+            <footer class="text-center">
+                <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a><br><br>
+                <p>Made By Site TakFilm <a href="http://localhost:5616" data-toggle="tooltip" title="Site TakFilm">http://localhost:5616</a></p>
+            </footer>
+            <footer>
+                <p align="center">&copy; 1396-کلیه حقوق متعلق به سایت تک فیلم میباشد. </p>
+            </footer>
         </div>
-        <footer class="text-center">
-            <a class="up-arrow" href="#TakFilm" data-toggle="tooltip" title="TO TOP">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            </a><br><br>
-            <p>Made By Site TakFilm <a href="http://localhost:5616" data-toggle="tooltip" title="Site TakFilm">http://localhost:5616</a></p>
-        </footer>
-        <footer>
-            <p align="center">&copy; 1396-کلیه حقوق متعلق به سایت تک فیلم میباشد. </p>
-        </footer>
-    </div>
-    <script>
-        $(document).ready(function () {
-            // Initialize Tooltip
-            $('[data-toggle="tooltip"]').tooltip();
+        @*<script class="footer-dovom">*@
+            //$(document).ready(function () {
+            //    // Initialize Tooltip
+            //    $('[data-toggle="tooltip"]').tooltip();
 
-            // Add smooth scrolling to all links in navbar + footer link
-            $(".navbar a, footer a[href='#TakFilm']").on('click', function (event) {
+            //    // Add smooth scrolling to all links in navbar + footer link
+            //    $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
 
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
+            //        // Make sure this.hash has a value before overriding default behavior
+            //        if (this.hash !== "") {
 
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
+            //            // Prevent default anchor click behavior
+            //            event.preventDefault();
 
-                    // Store hash
-                    var hash = this.hash;
+            //            // Store hash
+            //            var hash = this.hash;
 
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 900, function () {
+            //            // Using jQuery's animate() method to add smooth page scroll
+            //            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            //            $('html, body').animate({
+            //                scrollTop: $(hash).offset().top
+            //            }, 900, function () {
 
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-        })
-    </script>
+            //                // Add hash (#) to URL when done scrolling (default click behavior)
+            //                window.location.hash = hash;
+            //            });
+            //        } // End if
+            //    });
+            //})
+        @*</script>*@
 
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

@@ -1,109 +1,59 @@
 ﻿@{
     ViewBag.Title = "تماس با ما";
 }
+@section styles{
+   
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+}
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<br @*style="line-height:1in"*@ />
-@*<form method="post">
-        نام : <input type="text" name="firstName" />
-        <br />
-        نام خانوادگی :
-        <input type="text" name="lastName" />
-        <br />
-        <button type="submit">
-            ثبت نام
-        </button>
-    </form>*@
-
-
-@*@using (Html.BeginForm())
-    {
-        <div class="form-group">
-            <label for="firstName">نام : </label>
-            <input type="text" name="firstName" id="firstName" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label for="lastName">نام خانوادگی : </label>
-            <input type="text" name="lastName" id="lastName" class="form-control" />
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">
-                <span class="glyphicon glyphicon-send"></span>
-                ثبت نام
-            </button>
-        </div>
-    }*@
-
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("sendEmail","Home"))
 {
     <div class="form-group">
         @Html.Label("firstName", "نام : ")
-        @Html.TextBox("firstName", null, new
-   {
-       @class = "form-control",
-       placeholder = "نام خود را وارد نمایید"@*, type = "number"*@,
-       data_tooltip = "ehsan"
-   })
+        @Html.TextBox("firstName", null, new{@class = "form-control" })
+  
     </div>
     <div class="form-group">
-        @Html.Label("lastName", "نام خانوادگی : ")
-        @Html.TextBox("lastName", null, new { @class = "form-control", placeholder = "نام خانوادگی خود را وارد نمایید" })
+        @Html.Label("email", "پست الکترونیکی")
+        @Html.TextBox("email", null, new { @class = "form-control", type = "email" })
     </div>
     <div class="form-group">
-        @Html.Label("password", "رمز عبور : ")
-        @Html.Password("password", null, new { @class = "form-control", placeholder = "رمز عبور خود را وارد نمایید" })
+        @Html.Label("subject", "موضوع : ")
+        @Html.TextBox("subject", null, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.Label("address", "آدرس : ")
-        @Html.TextArea("address", null, 25, 50, new { @class = "form-control" })
+        @Html.Label("body", "پیام : ")
+        @Html.TextArea("body", null, new { @class = "form-control" })
     </div>
-    <div class="checkbox">
-        @Html.Label("agreement", "من شرایط عضویت در وب سایت را مطالعه نمودم ")
-        @Html.CheckBox("agreement", true, new { @class = "pull-right", style = "margin-left : 10px" })
-    </div>
-    <div class="checkbox">
-
-        @Html.Label("male", "مرد  ")
-        @Html.RadioButton("gender", "male", true, new { id = "male" })
-
-        @Html.Label("female", "زن  ")
-        @Html.RadioButton("gender", "female", false, new { id = "female" })
-
-    </div>
-    <div class="form-group">
-        @Html.Label("city", "محل تولد : ")
-        @Html.DropDownList("city",
-       new SelectList(new List<object> {
-        new { Id = 1, Name = "تهران" },
-        new { Id = 2, Name = "شیراز" },
-        new { Id = 3, Name = "ساری" },
-        new { Id = 4, Name = "خرم آباد" },
-        new { Id = 5, Name = "اردبیل" }
-    }, "Id", "Name", 4, new int[1] { 1 }),
-       "لطفاً یک شهر را انتخاب نمایید"/*,new { onchange = "this.form.submit()" }*/)
-    </div>
-    <div class="form-group">
-        @Html.Label("fruits", "میوه های مورد علاقه : ")
-        @Html.ListBox("fruits",
-        new SelectList(new List<object> {
-        new { Id = 1, Name = "گلابی" },
-        new { Id = 2, Name = "سیب" },
-        new { Id = 3, Name = "توت فرنگی" },
-        new { Id = 4, Name = "موز" },
-        new { Id = 5, Name = "هندوانه" }
-        }, "Id", "Name"))
-    </div>
-
-
-
-    @Html.Hidden("currentTime", @DateTime.Now, new { })
+        @Html.AntiForgeryToken()
     <div class="form-group">
         <button type="submit" class="btn btn-primary">
             <span class="glyphicon glyphicon-send"></span>
-            ثبت نام
+            ارسال
         </button>
     </div>
 }
+@section scripts{
+<script src="~/Scripts/toastr.min.js"></script>
+    <script>
+        if (@ViewBag.status==1) {
+            toastr.success("از ارسال شما متشکریم.", "تک فیلم", {
+                "progressBar": true,
+                "timeout": "10000",
+                "positionClass":"toast-top-left"
+            })
+        }
+        else {
+            toastr.error("متاسفانه پیام شما ارسال نشد. لطفا مجددا تلاش نمایید.", "تک فیلم", {
+                "progressBar": true,
+                "timeout": "10000",
+                "positionClass": "toast-top-right"
+            })
 
+        }
+    
+
+    </script>
+    }

@@ -5,4 +5,54 @@
 <h3>@ViewBag.Message</h3>
 
 
-<p>Use this area to provide additional information.</p>
+
+<div class="form-group">
+    @Html.Label("firstName", "نام : ")
+    @Html.TextBox("firstName", null, new
+   {
+       @class = "form-control",
+       placeholder = "نام خود را وارد نمایید"@*, type = "number"*@,
+       data_tooltip = "ehsan"
+   })
+</div>
+<div class="form-group">
+    @Html.Label("lastName", "نام خانوادگی : ")
+    @Html.TextBox("lastName", null, new { @class = "form-control", placeholder = "نام خانوادگی خود را وارد نمایید" })
+</div>
+<div class="form-group">
+    @Html.Label("password", "رمز عبور : ")
+    @Html.Password("password", null, new { @class = "form-control", placeholder = "رمز عبور خود را وارد نمایید" })
+</div>
+<div class="form-group">
+    @Html.Label("address", "آدرس : ")
+    @Html.TextArea("address", null, 25, 50, new { @class = "form-control" })
+</div>
+<div class="checkbox">
+    @Html.Label("agreement", "من شرایط عضویت در وب سایت را مطالعه نمودم ")
+    @Html.CheckBox("agreement", true, new { @class = "pull-right", style = "margin-left : 10px" })
+</div>
+<div class="checkbox">
+
+    @Html.Label("male", "مرد  ")
+    @Html.RadioButton("gender", "male", true, new { id = "male" })
+
+    @Html.Label("female", "زن  ")
+    @Html.RadioButton("gender", "female", false, new { id = "female" })
+
+</div>
+<div class="form-group">
+    @Html.Label("city", "محل تولد : ")
+    @Html.DropDownList("city",
+       new SelectList(new List<object> {
+        new { Id = 1, Name = "تهران" },
+        new { Id = 2, Name = "شیراز" },
+        new { Id = 3, Name = "ساری" },
+        new { Id = 4, Name = "خرم آباد" },
+        new { Id = 5, Name = "اردبیل" }
+    }, "Id", "Name", 4, new int[1] { 1 }),
+       "لطفاً یک شهر را انتخاب نمایید"/*,new { onchange = "this.form.submit()" }*/)
+</div>
+<div class="form-group">
+    @Html.Label("fruits", "میوه های مورد علاقه : ")
+    @Html.ListBox("fruits",
+        new SelectListظظظظ
