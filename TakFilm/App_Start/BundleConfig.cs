@@ -26,6 +26,13 @@ namespace TakFilm
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+        
+            bundles.Add(new StyleBundle("~/Content/css-Admin").Include("~/Content/FlatPoint.css", "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css-superhero").Include("~/Content/superhero.css", "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css-solar").Include("~/Content/solar.css", "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css-united").Include("~/Content/united.css", "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css-darkly").Include("~/Content/darkly.css", "~/Content/site.css"));
+
         }
     }
 }

@@ -74,6 +74,35 @@ namespace TakFilmClass.Controllers
 
             return View("Contact");
         }
+        [HttpPost]
+        [ActionName("ChangeTheme")]
+        public ActionResult Theme()
+        {
+            string name = "";
+            int ThemeName = Convert.ToInt16(Request.Form["theme"]);
+            if(ThemeName==1)
+            {
+                name = "Admin";
+            }
+            else if(ThemeName==2)
+            {
+                name = "superhero";
+            }
+            else if (ThemeName == 3)
+            {
+                name = "solar";
+            }
+            else if (ThemeName == 4)
+            {
+                name = "united";
+            }
+            else if (ThemeName == 5)
+            {
+                name = "darkly";
+            }
 
+            ViewBag.ThemeName = "~/Views/Shared/_" + name + "ThemeLayout.cshtml";
+            return View();
+        }
     }
 }

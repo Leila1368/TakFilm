@@ -16,7 +16,9 @@
 else
 {
     <ul class="nav navbar-nav navbar-left">
-        <li>@Html.ActionLink("ثبت نام", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("ورود", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+        @*<li>@Html.ActionLink("ثبت نام", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("ورود", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+        <li><a href="@Url.Action("Register")"><i class="fa fa-user-circle-o" aria-hidden="true"></i>ثبت نام </a>
+        <li><a href="@Url.Action("Login")"><i class="fa fa-sign-in" aria-hidden="true"></i>ورود</a>
+</ul>
 }

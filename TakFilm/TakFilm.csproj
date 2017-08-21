@@ -204,8 +204,13 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\darkly.css" />
+    <Content Include="Content\FlatPoint.css" />
+    <Content Include="Content\solar.css" />
+    <Content Include="Content\superhero.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\united.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -277,6 +282,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Home\ChangeTheme.cshtml" />
+    <Content Include="Views\Shared\_darklyLayout.cshtml" />
+    <Content Include="Views\Shared\_superheroLayout.cshtml" />
+    <Content Include="Views\Shared\_unitedLayout.cshtml" />
+    <Content Include="Views\Shared\_FlatPointLayout.cshtml" />
+    <Content Include="Views\Shared\_solarLayout.cshtml" />
+    <Content Include="Views\Home\Theme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

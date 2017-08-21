@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "ChangeTheme";
+    Layout = ViewBag.ThemeName;
+
+}
+
+<h2>ChangeTheme</h2>
+
+@using (Html.BeginForm())
+{
+    <form>
+        تغییر تم : <select name="Theme">
+            <option value="Admin">Admin</option>
+            <option value="Superhero">Superhero</option>
+            <option value="FlatPoint">FlatPoint</option>
+            <option value="darkly">darkly</option>
+            <option value="united">united</option>
+
+        </select>
+
+    </form>
+    <button type="submit">تغییر قالب</button>
+}
