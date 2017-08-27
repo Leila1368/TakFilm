@@ -1,0 +1,15 @@
+﻿@*@model TakFilm.Models.Movie*@
+@model IEnumerable<TakFilm.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>@Model.Name</h2>
+<h2>@Model.Id</h2>*@
+
+<ul>
+    @foreach(TakFilm.Models.Movie movie in Model)
+    {
+        <li>@movie.Name</li>
+    }
+</ul>

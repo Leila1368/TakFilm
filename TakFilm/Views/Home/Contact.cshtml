@@ -1,38 +1,42 @@
 ﻿@{
-    ViewBag.Title = "تماس با ما";
+    ViewBag.Title = "فرم تماس با ما";
 }
 @section styles{
    
 <link href="~/Content/toastr.min.css" rel="stylesheet" />
 }
-<h2>@ViewBag.Title.</h2>
+<br />
+<h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-@using (Html.BeginForm("sendEmail","Home"))
+@using (Html.BeginForm("sendEmail", "Home"))
 {
-    <div class="form-group">
-        @Html.Label("firstName", "نام : ")
-        @Html.TextBox("firstName", null, new{@class = "form-control" })
-  
-    </div>
-    <div class="form-group">
-        @Html.Label("email", "پست الکترونیکی")
-        @Html.TextBox("email", null, new { @class = "form-control", type = "email" })
-    </div>
-    <div class="form-group">
-        @Html.Label("subject", "موضوع : ")
-        @Html.TextBox("subject", null, new { @class = "form-control" })
-    </div>
-    <div class="form-group">
-        @Html.Label("body", "پیام : ")
-        @Html.TextArea("body", null, new { @class = "form-control" })
-    </div>
+    <div class="form">
+        <br />
+        <div class="form-group">&nbsp;
+            @Html.Label("firstName", "نام : ")
+            &nbsp; &nbsp;&nbsp;@Html.TextBox("firstName", null, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">&nbsp;
+            @Html.Label("email", "پست الکترونیکی :")
+            &nbsp; &nbsp;&nbsp;@Html.TextBox("email", null, new { @class = "form-control", type = "email" })
+        </div>
+        <div class="form-group">&nbsp;
+            @Html.Label("subject", "موضوع : ")
+            &nbsp; &nbsp; &nbsp;@Html.TextBox("subject", null, new { @class = "form-control" })
+        </div>
+        <div class="form-group">&nbsp;
+            @Html.Label("body", "پیام : ")
+            &nbsp; &nbsp;&nbsp; @Html.TextArea("body", null, new { @class = "form-control" })
+        </div>
         @Html.AntiForgeryToken()
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">
-            <span class="glyphicon glyphicon-send"></span>
-            ارسال
-        </button>
+        <div class="form-group">&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-send"></span>
+                ارسال
+            </button>
+        </div>
     </div>
 }
 @section scripts{

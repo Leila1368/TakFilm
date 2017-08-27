@@ -28,18 +28,6 @@ namespace TakFilmClass.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //[ActionName("Contact")]
-        //public ActionResult ProcessForm(string firstName,
-        //    string lastName,
-        //    string email,
-        //    string subject,
-        //    string message)
-        //{
-        //    ViewBag.Message = "SALAM " + firstName + " - " + lastName;
-
-        //    return View();
-        //}
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SendEmail()

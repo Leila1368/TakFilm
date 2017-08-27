@@ -124,7 +124,7 @@ footer {
 
 .nav navbar-nav {
     direction: rtl;
-    background-color: #2d2d30;
+    background-color: #248a98;
     opacity: 0.9;
 }
 
@@ -133,4 +133,14 @@ footer {
     margin: 10px 0 30px 0;
     font-size: 20px;
     color: #333;
+}
+.navbar{
+    background-color: #2f4f6d;
+}
+.form{
+    width:450px;
+    height:500px;
+    background-color:#c6e1e9;
+    border-radius:15px;
+    border:solid 3px;
 }

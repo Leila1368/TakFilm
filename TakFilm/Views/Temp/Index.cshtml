@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    UserName:
+    <input type="text" id="name" />
+</p>
+<p>
+    <input type="submit" id="send" />
+</p>
+
+@section script{
+    <script>
+        $('#send').on('click', function () {
+            $.ajax({
+                url: '/Temp/RowAjaxProcess',
+                data: {
+                    name: $('#name').val(),
+                    method: 'get',
+                    sucess: function () {
+                        console.log('sucess');
+                    }
+                }
+            });
+
+        });
+    </script>
+}

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "DataTransfer";
+}
+<h1 style="color:palevioletred">
+    @ViewData["Name"]
+</h1>
+
+<h1 style="color:deeppink">
+    @ViewBag.Age
+</h1>
+
+<h1 style="color:chocolate">
+    @(((TakFilm.Models.Movie)ViewData["Movie"]).Name)
+</h1>
+
+<h1 style="color:blue">
+    @(((TakFilm.Models.Movie)ViewBag.selectMovie).Name)
+</h1>
+

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Ajax";
+}
+
+<p>
+    UserName:
+    <input type="text" id="name" />
+</p>
+<p>
+    <input type="submit" id="send" />
+</p>
+
+@section scripts{
+    <script>
+        $('#send').on('click', function () {
+            $.ajax({
+                url: '/Temp/RowAjaxProcess',
+                data: {
+                    name: $('#name').val()
+                },
+                    method: 'get',
+                    success: function () {
+                        console.log('success');
+                    }
+            });
+
+        });
+    </script>
+}
+
+

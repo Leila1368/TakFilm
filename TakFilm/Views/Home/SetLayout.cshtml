@@ -1,17 +1,18 @@
 ﻿
 @{
-    ViewBag.Title = "Theme";
+    ViewBag.Title = "SetLayout";
     if (ViewBag.Theme != null)
     {
         Layout = ViewBag.Theme;
     }
 }
 
+
 @using (Html.BeginForm())
 {
     <div class="container">
         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-sx-12">
-            @Html.DropDownList("Theme",
+            @Html.DropDownList("theme",
            new SelectList(new List<object>{
                  new{Id=1,Name="Admin"},
                  new{Id=2,Name="superhero"},
@@ -22,4 +23,3 @@
         </div>
     </div>
 }
-

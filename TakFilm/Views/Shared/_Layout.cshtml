@@ -11,7 +11,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="~/Scripts/script/JavaScript.js"></script>
     <script src="https://use.fontawesome.com/8af2b33581.js"></script>
-    @*@Styles.Render("~/Content/css")*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
@@ -28,7 +27,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("TakFilm", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <img src="~/Library/Image/Film.png" />
+                @Html.ActionLink("دیجی مووی", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @*<a href="@Url.Action("TakFilm")"><i class="fa fa-film"  aria-hidden="true"></i>تک فیلم</a>*@
             </div>
             <div class="navbar-collapse collapse">

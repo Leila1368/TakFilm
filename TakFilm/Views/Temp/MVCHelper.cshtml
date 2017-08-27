@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "MVCHelper";
+}
+<br style="line-height:2cm"/><br />
+@Ajax.ActionLink("send Ajax Request", "AjaxActionLinkProcess","Temp", new AjaxOptions { UpdateTargetId="result"})
+
+<br style="line-height:2cm" /><br />
+<h1 id="result"></h1>
+@section scripts{
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+
+    </script>
+}
